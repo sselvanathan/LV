@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\AboutPageHandler;
+use App\Handler\Factory\AboutPageHandlerFactory;
 use App\Handler\Factory\HomePageHandlerFactory;
 use App\Handler\HomePageHandler;
+use App\Service\AboutPageService;
 use App\Service\HomePageService;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -43,6 +46,8 @@ class ConfigProvider
             'factories'  => [
                 HomePageHandler::class => HomePageHandlerFactory::class,
                 HomePageService::class => InvokableFactory::class,
+                AboutPageHandler::class => AboutPageHandlerFactory::class,
+                AboutPageService::class => InvokableFactory::class,
             ],
         ];
     }
