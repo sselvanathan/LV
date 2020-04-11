@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace App;
 
-use App\Handler\AboutPageHandler;
-use App\Handler\Factory\AboutPageHandlerFactory;
-use App\Handler\Factory\HomePageHandlerFactory;
-use App\Handler\HomePageHandler;
-use App\Service\AboutPageService;
-use App\Service\HomePageService;
+
+use App\Handler\Factory\ToDoPageHandlerFactory;
+use App\Handler\ToDoPageHandler;
+use App\Repository\ToDoRepository;
+use App\Service\Factory\ToDoServiceFactory;
+use App\Service\ToDoService;
+use App\UseCase\Factory\GetToDoModelCollectionUseCaseFactory;
+use App\UseCase\GetToDoModelCollectionUseCase;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 /**
@@ -40,14 +42,11 @@ class ConfigProvider
     public function getDependencies() : array
     {
         return [
-            'invokables' => [
-                Handler\PingHandler::class => Handler\PingHandler::class,
-            ],
             'factories'  => [
-                HomePageHandler::class => HomePageHandlerFactory::class,
-                HomePageService::class => InvokableFactory::class,
-                AboutPageHandler::class => AboutPageHandlerFactory::class,
-                AboutPageService::class => InvokableFactory::class,
+                ToDoPageHandler::class => ToDoPageHandlerFactory::class,
+                ToDoRepository::class => InvokableFactory::class, //Konstrukter leer
+                ToDoService::class => ToDoServiceFactory::class,
+                GetToDoModelCollectionUseCase::class => GetToDoModelCollectionUseCaseFactory::class
             ],
         ];
     }
