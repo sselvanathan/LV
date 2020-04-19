@@ -7,7 +7,7 @@ namespace App;
 
 use App\Handler\Factory\ToDoPageHandlerFactory;
 use App\Handler\ToDoPageHandler;
-use App\Repository\ToDoRepository;
+use Database\Core\Repository\ToDoRepository;
 use App\Service\Factory\ToDoServiceFactory;
 use App\Service\ToDoService;
 use App\UseCase\Factory\GetToDoModelCollectionUseCaseFactory;
