@@ -1,14 +1,12 @@
 <?php
 
 
-namespace App\Collection;
+namespace Database\Core\Collection;
 
-
-use App\Model\ToDoModel;
+use Database\Core\Model\ToDoModel;
 
 class ToDoModelCollection
 {
-
     /**
      * @var ToDoModel[]
      */

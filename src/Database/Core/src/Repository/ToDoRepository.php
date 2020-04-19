@@ -1,11 +1,9 @@
 <?php
 
+namespace Database\Core\Repository;
 
-namespace App\Repository;
-
-
-use App\Collection\ToDoModelCollection;
-use App\Model\ToDoModel;
+use Database\Core\Collection\ToDoModelCollection;
+use Database\Core\Model\ToDoModel;
 
 class ToDoRepository
 {

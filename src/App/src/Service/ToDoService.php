@@ -4,8 +4,8 @@
 namespace App\Service;
 
 
-use App\Collection\ToDoModelCollection;
-use App\Repository\ToDoRepository;
+use Database\Core\Collection\ToDoModelCollection;
+use Database\Core\Repository\ToDoRepository;
 
 class ToDoService
 {

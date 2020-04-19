@@ -4,7 +4,7 @@
 namespace App\Service\Factory;
 
 
-use App\Repository\ToDoRepository;
+use Database\Core\Repository\ToDoRepository;
 use App\Service\ToDoService;
 use Psr\Container\ContainerInterface;
 

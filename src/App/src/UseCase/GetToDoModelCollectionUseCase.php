@@ -4,7 +4,7 @@
 namespace App\UseCase;
 
 
-use App\Collection\ToDoModelCollection;
+use Database\Core\Collection\ToDoModelCollection;
 use App\Service\ToDoService;
 
 class GetToDoModelCollectionUseCase

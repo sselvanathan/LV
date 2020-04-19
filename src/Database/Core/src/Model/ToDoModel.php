@@ -1,8 +1,6 @@
 <?php
 
-
-namespace App\Model;
-
+namespace Database\Core\Model;
 
 class ToDoModel
 {
