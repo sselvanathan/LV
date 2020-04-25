@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Zend\ConfigAggregator\ArrayProvider;
 use Zend\ConfigAggregator\ConfigAggregator;
 use Zend\ConfigAggregator\PhpFileProvider;
-use Database\Core\ConfigProvider;
 
 // To enable or disable caching, set the `ConfigAggregator::ENABLE_CACHE` boolean in
 // `config/autoload/local.php`.
@@ -27,15 +26,16 @@ $aggregator = new ConfigAggregator(
         \Zend\Expressive\Router\ConfigProvider::class,
 
         // Swoole config to overwrite some services (if installed)
-        class_exists(ConfigProvider::class)
-            ? ConfigProvider::class
+        class_exists(\Zend\Expressive\Swoole\ConfigProvider::class)
+            ? \Zend\Expressive\Swoole\ConfigProvider::class
             : function () {
             return [];
         },
 
         // Default App module config
         \App\ConfigProvider::class,
-        ConfigProvider::class,
+        \Database\Core\ConfigProvider::class,
+        \Config\ConfigProvider::class,
 
         // Load application config in a pre-defined order in such a way that local settings
         // overwrite global settings. (Loaded as first to last):
